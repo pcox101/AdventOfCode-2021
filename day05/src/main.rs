@@ -2,6 +2,9 @@ use std::{fs::File, io::{BufReader, BufRead}, collections::HashMap};
 use regex::Regex;
 
 fn main() {
+    use std::time::Instant;
+    let now = Instant::now();
+    
     let f = File::open(concat!(env!("CARGO_MANIFEST_DIR"), "\\input.txt")).unwrap();
     let f = BufReader::new(f);
 
@@ -28,6 +31,8 @@ fn main() {
     }
 
     println!("Part2: {}",part2);
+
+    println!("Elapsed Time: {:.2?}", now.elapsed());
 
 }
 
