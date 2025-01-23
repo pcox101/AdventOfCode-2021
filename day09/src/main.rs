@@ -38,7 +38,6 @@ fn main() {
                 // Flood fill (literally!)
                 let mut q: Vec<(usize,usize)> = Vec::new();
                 let mut visited: HashSet<(usize, usize)> = HashSet::new();
-                let mut counter = 0;
                 
                 q.push((i,j));
 
@@ -46,7 +45,6 @@ fn main() {
                 {
                     if game_board[n.0][n.1] != 9 && visited.insert((n.0, n.1))
                     {
-                        counter += 1;
                         if n.0 != 0 { q.push((n.0 - 1, n.1)); };
                         if n.0 != game_board.len() - 1 { q.push((n.0 + 1, n.1)); };
                         if n.1 != 0 { q.push((n.0, n.1 - 1)); };
